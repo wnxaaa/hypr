@@ -1,0 +1,1 @@
+kill $(ps -ef | grep "waybar -c"|grep -v "grep"|awk '{print$2}')

@@ -1,0 +1,26 @@
+[pyprland]
+plugins = [
+    "layout_center",
+    "wallpapers",
+    "toggle_special",
+    "workspaces_follow_focus",
+    "magnify"
+]
+[system_notifier.sources]
+command = "sudo journalctl -fx"
+parser = "journal"
+
+[wallpapers]
+# unique = true # set a different wallpaper for each screen
+path = "~/.config/hypr/wallpaper/"
+# interval = 60 # change every hour
+extensions = ["jpg", "jpeg"]
+recurse = true
+
+
+[layout_center]
+margin = 60
+next = "exec hyprnavi r"
+
+[workspaces_follow_focus]
+max_workspaces = 6 # number of workspaces before cycling

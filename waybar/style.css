@@ -1,0 +1,141 @@
+* {
+	font-size: 12px;
+	font-family: "Hack", "思源黑体";
+}
+
+window {
+	background: rgba(0, 0, 0, 0);
+}
+
+window#waybar {
+	background: rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+	margin: 4px;
+	border-radius: 12px;
+	padding: 2px;
+}
+
+#workspaces,
+.modules-center,
+.modules-right {
+	border-radius: 12px;
+	background-color: rgb(235, 242, 247);
+	padding: 2px;
+	margin: 4px;
+}
+
+.modules-center {
+	padding: 0 16px;
+}
+
+#workspaces button {
+	border-radius: 12px;
+	padding: 0 16px;
+	color: #7d7d7d;
+	font-weight: 700;
+	font-size: 14px;
+	background: none;
+	border: none;
+}
+
+#workspaces button:hover {
+	box-shadow: none;
+	text-shadow: none;
+	transition: color .2s, box-shadow 0s;
+	color: #333;
+	font-weight: 700;
+	background: none;
+	border: none;
+}
+
+#workspaces button.active {
+	transition: all 0.3s ease-in-out;
+	color: #333;
+	font-weight: 700;
+	background: #fff;
+}
+
+#custom-weatcher {
+	margin: 0 12px;
+}
+
+#windows {
+	background-color: #fff;
+	margin: 8px;
+	border-radius: 12px;
+	padding: 0 16px;
+}
+
+#window.c {
+	font-weight: 700;
+}
+
+#window.t {
+	margin-left: 16px;
+}
+
+#clock,
+#custom-wallpaper,
+#custom-music {
+	color: rgb(110, 115, 191);
+}
+
+#clock {
+	font-weight: 600;
+}
+
+#custom-wallpaper {
+	margin: 0 8px;
+	font-size: 20px;
+}
+
+#right,
+#pulseaudio,
+#tray,
+#custom-notification {
+	background: #fff;
+	padding: 0 16px;
+	border-radius: 12px;
+}
+
+#custom-notification {
+	font-family: "NotoSansMono Nerd Font";
+}
+
+#memory,
+#battery {
+	margin-left: 12px;
+}
+
+#memory {
+	color: darkgreen;
+}
+
+#battery {
+	color: darkcyan;
+}
+
+#temperature {
+	color: darkslategrey;
+}
+
+#custom-prev,
+#custom-next {
+	padding: 0 6px;
+	margin: 4px 0;
+	background-color: rgb(110, 115, 191);
+	color: #fff;
+	border-radius: 4px;
+	font-size: 10px;
+}
+
+#custom-prev {
+	margin-left: 12px;
+	margin-right: 4px;
+}
+
+#custom-next {
+	margin-right: 4px;
+}

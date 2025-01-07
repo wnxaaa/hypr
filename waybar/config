@@ -1,0 +1,183 @@
+[
+	{
+		"layer": "top",
+		"position": "top",
+		"mode": "dock",
+		"modules-left": [
+			"hyprland/workspaces",
+			"group/windows"
+		],
+		"modules-center": [
+			"clock",
+			"custom/wallpaper",
+			"group/center"
+		],
+		"modules-right": [
+			"group/right",
+			"tray"
+		],
+		"hyprland/workspaces": {
+			"disable-scroll": true,
+			"format": "{windows}",
+			"on-scroll-up": "hyprctl dispatch workspace e-1",
+			"on-scroll-down": "hyprctl dispatch workspace e+1",
+			"window-rewrite-default": "  ",
+			"window-rewrite": {
+				"class<.*chrome.*>": "  ",
+				"class<Gimp-.*>": "  ",
+				"Alacritty": "  ",
+				"kitty": "  ",
+				"class<.*chrome.*> title<.*github.*>": "  ",
+				"code-oss": " 󰨞 ",
+				"jetbrains-studio": "  ",
+				"apifox": " 󱂛 ",
+				"wechat": "  ",
+				"clash-verge": "  ",
+				"qq": " 󰘅 ",
+				"GenyMotion Player": "  ",
+				"scrcpy": "  ",
+				"dolphin": "  ",
+				"listen1": "  ",
+				"plasma-systemmonitor": " 󰨇 "
+			}
+		},
+		"group/windows": {
+			"orientation": "inherit",
+			"drawer": {
+				"transition-duration": 500,
+				"children-class": "not-power",
+				"transition-left-to-right": true
+			},
+			"modules": [
+				"hyprland/window#c",
+				"hyprland/window#t"
+			]
+		},
+		"hyprland/window#c": {
+			"format": "{class}",
+			"rewrite": {
+				".*google-chrome.*": "Google Chrome",
+				"(.*)code-oss(.*)": "Visual Studio Code",
+				"(.*)jetbrains-studio(.*)": "Android Studio",
+				"(.*)wechat(.*)": "微信"
+			}
+		},
+		"hyprland/window#t": {
+			"format": "{title}",
+			"max-length": 55
+		},
+		"clock": {
+			"format": "{:%H:%M}",
+			"format-alt": "{:%m月%d日 %H:%M}",
+			"tooltip": true,
+			"tooltip-format": "{calendar}",
+			"on-click-right": "google-chrome-stable --incognito 'https://www.baidu.com/s?wd=日历'",
+			"calendar": {
+				"mode": "month",
+				"format": {
+					"months": "<span color='#ffead3'><b>{}</b></span>",
+					"days": "<span color='#ecc6d9'><b>{}</b></span>",
+					"weeks": "<span color='#99ffdd'><b>{}</b></span>",
+					"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+					"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+				}
+			}
+		},
+		"custom/weatcher": {
+			"exec": "bash $HYPR/script/weatcher.sh",
+			"tooltip": true,
+			"interval": 600,
+			"return-type": "json"
+		},
+		"custom/wallpaper": {
+			"format": "  ",
+			"on-click": "pypr wall next"
+		},
+		"group/center": {
+			"orientation": "inherit",
+			"drawer": {
+				"transition-duration": 500,
+				"children-class": "not-power",
+				"transition-left-to-right": true
+			},
+			"modules": [
+				"custom/music",
+				"custom/prev",
+				"custom/next"
+			]
+		},
+		"custom/music": {
+			"exec": "fish $HYPR/script/media/music.fish",
+			"format": "{}",
+			"interval": 1,
+			"tooltip": true,
+			"return-type": "json",
+			"on-click": "fish $HYPR/script/media/play_pause.fish",
+			"on-scroll-up": "swayosd-client --output-volume 5",
+			"on-scroll-down": "swayosd-client --output-volume -5",
+			"on-click-right": "pavucontrol"
+		},
+		"custom/prev": {
+			"format": "󰒮",
+			"tooltip-format": "上一首",
+			"on-click": "playerctl previous"
+		},
+		"custom/next": {
+			"format": "󰒭",
+			"tooltip-format": "下一首",
+			"on-click": "playerctl next"
+		},
+		"pulseaudio": {
+			"format": "󰕾 {volume:2}%",
+			"format-bluetooth": "󰕾 {volume}%（蓝牙）",
+			"format-muted": "静音啦~~~",
+			"scroll-step": 5,
+			"on-click": "pamixer -t",
+			"on-click-right": "pavucontrol"
+		},
+		"group/right": {
+			"orientation": "inherit",
+			"modules": [
+				"cpu",
+				"temperature",
+				"memory",
+				"battery"
+			]
+		},
+		"memory": {
+			"on-click": "plasma-systemmonitor",
+			"interval": 5,
+			"format": "󰍛 {percentage:2}%"
+		},
+		"cpu": {
+			"interval": 1,
+			"format": " {usage:2}%",
+			"on-click": "plasma-systemmonitor"
+		},
+		"temperature": {
+			"critical-threshold": 80,
+			"on-click": "plasma-systemmonitor",
+			"format-critical": "({temperatureC}°C[过热])",
+			"format": "({temperatureC}°C)"
+		},
+		"battery": {
+			"states": {
+				"good": 95,
+				"warning": 30,
+				"critical": 15
+			},
+			"on-click": "tlpui",
+			"format": "<b>{icon}</b> {capacity}%",
+			"format-icons": [
+				"󰂎",
+				"󱊡",
+				"󱊢",
+				"󱊣"
+			]
+		},
+		"tray": {
+			"icon-size": 16,
+			"spacing": 8
+		}
+	}
+]
