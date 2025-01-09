@@ -28,7 +28,7 @@
 				"Alacritty": "  ",
 				"kitty": "  ",
 				"class<.*chrome.*> title<.*github.*>": "  ",
-				"code-oss": " 󰨞 ",
+				"Code": " 󰨞 ",
 				"jetbrains-studio": "  ",
 				"apifox": " 󱂛 ",
 				"wechat": "  ",
@@ -84,7 +84,7 @@
 			}
 		},
 		"custom/weatcher": {
-			"exec": "bash $HYPR/script/weatcher.sh",
+			"exec": "bash $hypr/script/weatcher.sh",
 			"tooltip": true,
 			"interval": 600,
 			"return-type": "json"
@@ -107,12 +107,12 @@
 			]
 		},
 		"custom/music": {
-			"exec": "fish $HYPR/script/media/music.fish",
+			"exec": "/usr/bin/fish $hypr/script/media/music.fish",
 			"format": "{}",
 			"interval": 1,
 			"tooltip": true,
 			"return-type": "json",
-			"on-click": "fish $HYPR/script/media/play_pause.fish",
+			"on-click": "fish $hypr/script/media/play_pause.fish",
 			"on-scroll-up": "swayosd-client --output-volume 5",
 			"on-scroll-down": "swayosd-client --output-volume -5",
 			"on-click-right": "pavucontrol"
@@ -147,11 +147,11 @@
 		"memory": {
 			"on-click": "plasma-systemmonitor",
 			"interval": 5,
-			"format": "󰍛 {percentage:2}%"
+			"format": "󰍛 {percentage:3}%"
 		},
 		"cpu": {
 			"interval": 1,
-			"format": " {usage:2}%",
+			"format": " {usage:3}%",
 			"on-click": "plasma-systemmonitor"
 		},
 		"temperature": {

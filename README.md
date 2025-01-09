@@ -15,6 +15,9 @@
 - hyprshot
 - hyprexpo
 
+### 环境变量
+`hypr` 需要设置为 `$HOME/.config/hypr` 
+
 ### 参考地址
 
 - [hyprland](https://wiki.hyprland.org/) 官方文档

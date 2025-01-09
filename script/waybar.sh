@@ -1,4 +1,4 @@
-bash="waybar -c $HYPR/waybar/config -s $HYPR/waybar/style.css"
+bash="waybar -c $hypr/waybar/config -s $hypr/waybar/style.css"
 while :
 do
     count=$(ps -ef | grep "waybar -c"|grep -v "grep" -c)
