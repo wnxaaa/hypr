@@ -25,20 +25,19 @@
 			"window-rewrite": {
 				"class<.*chrome.*>": "  ",
 				"class<Gimp-.*>": "  ",
-				"Alacritty": "  ",
-				"kitty": "  ",
+				"Alacritty|kitty": "  ",
 				"class<.*chrome.*> title<.*github.*>": "  ",
 				"Code": " 󰨞 ",
 				"jetbrains-studio": "  ",
-				"apifox": " 󱂛 ",
+				"apifox": " 󱃖 ",
 				"wechat": "  ",
-				"clash-verge": "  ",
+				"clash-verge": " 󰖂 ",
 				"qq": " 󰘅 ",
-				"GenyMotion Player": "  ",
-				"scrcpy": "  ",
-				"dolphin": "  ",
-				"listen1": "  ",
-				"plasma-systemmonitor": " 󰨇 "
+				"class<GenyMotion.*>|scrcpy": "  ",
+				"dolphin|pcmanfm": "  ",
+				"listen1|qqmusic": " 󰎄 ",
+				"plasma-systemmonitor": " 󰨇 ",
+				"virt-manager|qemu": " 󰑈 "
 			}
 		},
 		"group/windows": {

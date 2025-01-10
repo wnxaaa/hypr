@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+set -l wofi_running (ps -ef|grep 'wofi --conf'|grep -v grep|wc -l)
+echo $wofi_running
+if test $wofi_running -eq 0
+    wofi --conf $hypr/wofi/config --style $hypr/wofi/style.css
+else
+    kill wofi
+end
